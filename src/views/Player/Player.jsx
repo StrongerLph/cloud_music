@@ -182,7 +182,9 @@ class Player extends Component {
     if (this.state.showLyrics) {
       this.setLyric(this.props.playList[index].id)
     }
-    this.handlePlayButton()
+    if (!this.state.playStatus) {
+      this.handlePlayButton()
+    }
     this.closeList()
   }
 
