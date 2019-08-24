@@ -1,0 +1,33 @@
+.songlist-word-over {
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #E5E3E5;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow:hidden;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+.songlist-img {
+  flex-shrink: 0; /* 处于flex布局的子元素禁用自动收缩 */
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.songlist-btn-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+}
+
+.songlist-btn-list li i {
+  font-size: 32px;
+  font-weight: 200;
+  color: #fff;
+}

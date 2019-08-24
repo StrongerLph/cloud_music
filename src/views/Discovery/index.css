@@ -1,0 +1,27 @@
+.word-over {
+  width: 100px;
+  height: 36px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow:hidden;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+.play-list-item {
+  float: left;
+  margin-top: 10px;
+}
+
+.play-list-item:nth-child(2) {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.play-list-item:nth-child(5) {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+

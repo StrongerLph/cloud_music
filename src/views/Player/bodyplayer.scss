@@ -1,0 +1,111 @@
+@mixin no-wrap($line: 1) {
+  overflow: hidden;
+  @if $line == 1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin img-full($attr: cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $attr;
+}
+
+@mixin bg-full($p: center, $s: contain, $r: no-repeat) {
+  background-position: $p;
+  background-size: $s;
+  background-repeat: $r;
+}
+
+@mixin bg-url($url) {
+  background-image: url($url);
+}
+
+// 滚动
+@mixin scroll($type: y) {
+  @if $type == x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  } @else {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  -webkit-overflow-scrolling: touch;
+}
+
+.player-cd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &.pause {
+    .needle {
+      transform: translate(-15px, 0) rotate(-40deg);
+    }
+
+    .disc-box {
+      animation-play-state: paused;
+    }
+  }
+
+  .needle {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    z-index: 9;
+    width: 120px;
+    height: 190px;
+    @include bg-url('../../assets/needle.png');
+    @include bg-full;
+    transform: translate(-15px, 0) rotate(0);
+    transform-origin: 21px 26px;
+    transition: all 0.3s;
+  }
+
+  .disc-box {
+    position: absolute;
+    top: 100px;
+    width: 275px;
+    height: 275px;
+    animation: circle-rotate 12s linear infinite;
+
+    .disc {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      @include bg-url('../../assets/disc.png');
+      @include bg-full;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

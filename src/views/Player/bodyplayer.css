@@ -1,0 +1,58 @@
+.player-cd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .player-cd.pause .needle {
+    transform: translate(-15px, 0) rotate(-40deg); }
+  .player-cd.pause .disc-box {
+    animation-play-state: paused; }
+  .player-cd .needle {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    z-index: 9;
+    width: 120px;
+    height: 190px;
+    background-image: url("../../assets/needle.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-15px, 0) rotate(0);
+    transform-origin: 21px 26px;
+    transition: all 0.3s; }
+  .player-cd .disc-box {
+    position: absolute;
+    top: 100px;
+    width: 275px;
+    height: 275px;
+    animation: circle-rotate 12s linear infinite; }
+    .player-cd .disc-box .disc {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      background-image: url("../../assets/disc.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .player-cd .disc-box img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      transform: translate(-50%, -50%); }
+
+@keyframes circle-rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=bodyplayer.css.map */

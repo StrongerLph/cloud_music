@@ -1,0 +1,11 @@
+.activeClass {
+  color: #fff;
+}
+
+.player-popup-am {
+}
+
+@keyframes player-popup-am{
+  0%{transform: translateY(0px);opacity: 1;}
+  100%{ transform: translateY(50px);opacity: 0;}
+}
